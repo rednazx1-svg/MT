@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TradeMaster Pro | Reliable Local Services</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+        // MASTER CONFIGURATION - Edit this only to customize the entire site
+        const CONFIG = {
+            BUSINESS_NAME: "TradeMaster Pro",
+            TRADE_TYPE: "Plumbing",
+            SERVICE_AREA: "Springfield and surrounding areas",
+            PHONE_DISPLAY: "(204) 555-0198",
+            PHONE_E164: "+12045550198",
+            EMAIL: "info@trademasterpro.com",
+            CLIENT_ID: "demo_client",
+            WEBHOOK_URL: "https://hook.us2.make.com/xfylmsm5av0wletmhw6218949wknfqmg",
+            PRIMARY_COLOR: "#2563eb",
+            SECONDARY_COLOR: "#4b5563"
+        };
+        
+        // Make CONFIG globally available
+        window.CONFIG = CONFIG;
+        
+        // Tailwind config with custom colors
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: CONFIG.PRIMARY_COLOR,
+                        secondary: CONFIG.SECONDARY_COLOR
+                    }
+                }
+            }
+        };
+    </script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-white text-gray-800 font-sans">
+    <!-- Sticky Header -->
+    <custom-header></custom-header>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-16 px-4 md:px-8 bg-gradient-to-br from-gray-50 to-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
+                    Reliable Local <span class="text-primary" data-bind="TRADE_TYPE"></span> Services
+                </h1>
+                <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto" data-bind="SERVICE_AREA_DESC">
+                    Fast, professional service you can count on. Serving your community with excellence.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#" data-bind-href="phone" 
+                       class="bg-primary hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition duration-300 flex items-center justify-center gap-2">
+                        <i data-feather="phone"></i>
+                        <span data-bind="PHONE_DISPLAY">Call Now</span>
+                    </a>
+                    <a href="#contact-form" 
+                       class="bg-white border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold py-3 px-8 rounded-lg transition duration-300 flex items-center justify-center gap-2">
+                        <i data-feather="message-square"></i>
+                        Request a Quote
+                    </a>
+                </div>
+</div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-16 px-4 md:px-8 bg-gray-50">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">Our Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition duration-300 border border-gray-100">
+                    <div class="text-primary mb-4">
+                        <i data-feather="tool" class="w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Repairs & Fixes</h3>
+                    <p class="text-gray-600">Quick and reliable repair solutions for all your needs.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition duration-300 border border-gray-100">
+                    <div class="text-primary mb-4">
+                        <i data-feather="settings" class="w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Installations</h3>
+                    <p class="text-gray-600">Professional installation services with precision and care.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition duration-300 border border-gray-100">
+                    <div class="text-primary mb-4">
+                        <i data-feather="shield" class="w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Maintenance</h3>
+                    <p class="text-gray-600">Regular maintenance to keep everything running smoothly.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition duration-300 border border-gray-100">
+                    <div class="text-primary mb-4">
+                        <i data-feather="search" class="w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Inspections</h3>
+                    <p class="text-gray-600">Thorough inspections to identify and prevent issues early.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition duration-300 border border-gray-100">
+                    <div class="text-primary mb-4">
+                        <i data-feather="alert-circle" class="w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Emergency Service</h3>
+                    <p class="text-gray-600">24/7 emergency response for urgent situations.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition duration-300 border border-gray-100">
+                    <div class="text-primary mb-4">
+                        <i data-feather="briefcase" class="w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Commercial Services</h3>
+                    <p class="text-gray-600">Specialized solutions for businesses and commercial properties.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-16 px-4 md:px-8 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">Why Choose Us</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="flex items-start gap-4">
+                    <div class="bg-primary/10 p-3 rounded-lg">
+                        <i data-feather="home" class="text-primary w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2">Locally Owned & Operated</h3>
+                        <p class="text-gray-600">We're your neighbors, committed to serving our community.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4">
+                    <div class="bg-primary/10 p-3 rounded-lg">
+                        <i data-feather="clock" class="text-primary w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2">Fast Response Time</h3>
+                        <p class="text-gray-600">Quick service when you need it most, without delays.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4">
+                    <div class="bg-primary/10 p-3 rounded-lg">
+                        <i data-feather="heart" class="text-primary w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2">Honest & Transparent</h3>
+                        <p class="text-gray-600">Clear communication and fair pricing with no hidden fees.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4">
+                    <div class="bg-primary/10 p-3 rounded-lg">
+                        <i data-feather="award" class="text-primary w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2">Experienced Technicians</h3>
+                        <p class="text-gray-600">Skilled professionals with years of hands-on experience.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Service Area -->
+    <section class="py-12 px-4 md:px-8 bg-gray-50">
+        <div class="max-w-6xl mx-auto text-center">
+            <div class="inline-flex items-center gap-2 text-lg text-gray-700 bg-white px-6 py-3 rounded-full shadow-sm">
+                <i data-feather="map-pin" class="text-primary w-5 h-5"></i>
+                <span>Serving <strong data-bind="SERVICE_AREA"></strong></span>
+            </div>
+        </div>
+    </section>
+<!-- Contact Form -->
+    <section id="contact-form" class="py-16 px-4 md:px-8 bg-white">
+        <div class="max-w-2xl mx-auto">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold mb-4 text-gray-900">Request a Quote</h2>
+                <p class="text-gray-600">Fill out the form below and we'll get back to you promptly.</p>
+            </div>
+            
+            <form id="lead-form" class="space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
+                        <input type="text" id="name" name="name" required 
+                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition duration-300">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
+                        <input type="email" id="email" name="email" required 
+                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition duration-300">
+                    </div>
+                </div>
+                
+                <div>
+                    <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" required 
+                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition duration-300">
+                </div>
+                
+                <div>
+                    <label for="service" class="block text-sm font-medium text-gray-700 mb-2">Service Needed *</label>
+                    <select id="service" name="service" required 
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition duration-300">
+                        <option value="" disabled selected>Select a service</option>
+                        <option value="Repairs">Repairs</option>
+                        <option value="Installation">Installation</option>
+                        <option value="Maintenance">Maintenance</option>
+                        <option value="Emergency">Emergency</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                
+                <div>
+                    <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message *</label>
+                    <textarea id="message" name="message" rows="4" required 
+                              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition duration-300" 
+                              placeholder="Please describe your needs..."></textarea>
+                </div>
+                <input type="hidden" id="client_id" data-bind-value="CLIENT_ID">
+<div id="form-message" class="hidden p-4 rounded-lg"></div>
+                
+                <button type="submit" id="submit-btn" 
+                        class="w-full bg-primary hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-300 flex items-center justify-center gap-2">
+                    <i data-feather="send" class="w-5 h-5"></i>
+                    Send Request
+                </button>
+                
+                <p class="text-sm text-gray-500 text-center">
+                    By submitting this form, you agree to be contacted about your service request.
+                </p>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <custom-footer></custom-footer>
+    <!-- Web Components -->
+    <script src="components/header.js"></script>
+    <script src="components/footer.js"></script>
+    
+    <!-- Main Script -->
+    <script src="script.js"></script>
+    
+    <!-- Initialize Feather Icons and bind config -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Bind CONFIG to all elements with data-bind attributes
+            if (window.bindConfig) {
+                window.bindConfig();
+            }
+            feather.replace();
+        });
+    </script>
+<script src="https://huggingface.co/deepsite/deepsite-badge.js"></script>
+</body>
+</html>
