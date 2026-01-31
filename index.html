@@ -256,6 +256,23 @@
             feather.replace();
         });
     </script>
-<script src="https://huggingface.co/deepsite/deepsite-badge.js"></script>
+<script>
+(function removeDeepSiteBadge() {
+  const selectors = [
+    '[data-testid="made-with-deepsite"]',
+    '.made-with-deepsite',
+    '#made-with-deepsite',
+    'a[href*="deepsite"]'
+  ];
+
+  selectors.forEach(sel => {
+    document.querySelectorAll(sel).forEach(el => el.remove());
+  });
+
+  // Run again in case it loads late
+  setTimeout(removeDeepSiteBadge, 500);
+})();
+</script>
+    
 </body>
 </html>
